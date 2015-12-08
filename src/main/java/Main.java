@@ -4,6 +4,7 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectServer;
 import com.db4o.config.annotations.reflect.Db4oConfiguratorFactory;
 import com.db4o.cs.Db4oClientServer;
+import forms.AdminWindow;
 import forms.MainWindows;
 import serverThread.ServerThread;
 import sun.rmi.server.Util;
@@ -17,6 +18,7 @@ import java.awt.*;
 public class Main {
     private static ServerThread serverThread = new ServerThread();
     static MainWindows mainWindows = new MainWindows();
+    static private AdminWindow adminWindow = new AdminWindow();
     public static void main(String[] args) {
 
 
@@ -32,10 +34,10 @@ public class Main {
         }
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                mainWindows.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                adminWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //                mainWindows.setPreferredSize(new Dimension(500, 500));
-                mainWindows.setSize(new Dimension(500, 500));
-                mainWindows.setVisible(true);
+                adminWindow.setSize(new Dimension(500, 500));
+                adminWindow.setVisible(true);
             }
         });
     }
